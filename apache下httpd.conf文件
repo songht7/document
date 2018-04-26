@@ -1,0 +1,27 @@
+apache下httpd.conf文件
+	启用模块LoadModule vhost_alias_module modules/mod_vhost_alias.so
+	NameVirtualHost *:80
+	<VirtualHost *:80>
+	    DocumentRoot D:\wamp\www
+	    ServerName localhost
+	</VirtualHost>
+	<VirtualHost *:80>
+	    DocumentRoot D:\wamp\www\58qd.cn
+	    ServerName localhost.58qd
+	</VirtualHost>
+	    
+	<VirtualHost *:80>
+	    DocumentRoot D:\wamp\www\sc\dz-bbs\upload
+	    ServerName localhost.bbs.58qd
+	</VirtualHost> 
+	<VirtualHost *:80>
+	    DocumentRoot D:\wamp\www\freeviicms
+	    ServerName localhost.wx
+	</VirtualHost> 
+
+如果是本地配置多域名
+找到C:\Windows\System32\drivers\etc\hosts文件
+	在里面添加
+	127.0.0.1       localhost.58qd
+	127.0.0.1       localhost.wx
+	127.0.0.1       localhost.team
