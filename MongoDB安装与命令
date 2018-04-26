@@ -1,0 +1,113 @@
+1.安装MongoDB3.0数据库
+
+2.创建windows服务
+命令提示符（管理员）
+切换至MongoDB安装目录
+>cd C:\Program Files\MongoDB\Server\3.0\bin
+安装服务（数据及日志存放文件夹需要是已经存在的路径）
+>mongod --dbpath=E:\DataBase\MongoDB\data  --logpath=E:\DataBase\MongoDB\log --install
+mongod --dbpath=D:\MongoDB\Data  --logpath=D:\MongoDB\Log --install
+
+授权安装服务（数据及日志存放文件夹需要是已经存在的路径）
+>mongod --dbpath=E:\DataBase\MongoDB\data  --logpath=E:\DataBase\MongoDB\log\mongodb.log --install --auth
+启动MongoDB服务
+>net start MongoDB
+停止MongoDB服务
+>net stop MongoDB
+删除MongoDB服务
+>sc.exe delete MongoDB
+在浏览器中输入http://localhost:27017 如果出现以下字样，则证明MongoDB已启动
+"It looks like you are trying to access MongoDB over HTTP on the native driver port."
+
+3.设置数据库管理员
+进入mongo命令
+>mongo (默认连接test库)
+进入超级管理员数据库（在数据库admin中的帐号属于超级管理员帐号,在admin数据库中验证后可以访问所有数据库）
+>use admin
+新建管理员
+>db.createUser({user:"admin",pwd:"12321",roles:[{role:"userAdminAnyDatabase",db:"admin"}]})
+    user字段，为新用户的名字；
+    pwd字段，用户的密码；
+    cusomData字段，为任意内容，例如可以为用户全名介绍；
+    roles字段，指定用户的角色，可以用一个空数组给新用户设定空角色；
+    在roles字段,可以指定内置角色和用户定义的角色。
+    Built-In Roles（内置角色）：
+    1. 数据库用户角色：read、readWrite;
+    2. 数据库管理角色：dbAdmin、dbOwner、userAdmin；
+    3. 集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；
+    4. 备份恢复角色：backup、restore；
+    5. 所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase
+    6. 超级用户角色：root（这里还有几个角色间接或直接提供了系统超级用户的访问（dbOwner 、userAdmin、userAdminAnyDatabase））
+    7. 内部角色：__system
+验证管理员
+>db.auth("用户名","密码")（返回“1”成功）
+
+
+
+=========================================================================================================================
+
+
+创建数据库文件（需要是已经存在的路径)
+> cd C:\Program Files\MongoDB 2.6 Standard Legacy\bin
+> mongod --dbpath E:\MongoDB\data
+在浏览器中输入http://localhost:27017 如果出现以下字样，则证明MongoDB已启动：
+"It looks like you are trying to access MongoDB over HTTP on the native driver port."
+
+创建数据库日志（需要是已经存在的路径，而日志文件mongodb.log会在命令执行完后自动创建）
+> mongod --logpath E:\MongoDB\log\mongodb.log
+
+打开shell控制台
+> cd cd 
+> mongo
+
+为MongoDB创建一个Windows服务
+> cd C:\Program Files\MongoDB 2.6 Standard Legacy\bin
+> mongod --dbpath=E:\MongoDB\data  --logpath=E:\MongoDB\log\mongo.log --install
+mongod --dbpath=D:\MongoDB\data  --logpath=D:\MongoDB\log\mongo.log --install
+启动MongoDB服务（net start MongoDB）
+停止MongoDB服务（net stop MongoDB）
+删除MongoDB服务（sc.exe delete MongoDB）
+
+建库
+use 数据库名;
+这样就创建了一个数据库。
+这一步很重要如果什么都不操作离开的话 这个库就会被系统删除
+show collections;      ---查看表 
+show dbs               ---查看库
+mongodb 删除数据库
+use mydb; use
+db.dropDatabase();
+mongodb删除表
+db.mytable.drop();s
+use
+
+db.collection名称.find()   //查看该collection下所有数据（没有条件）
+db.collection名称.find(｛a:1｝)   //查看该collection下数据（有条件,属性为a.值为1）
+db.help()  //显示数据库操作命令
+db.collection名称.help()  //显示集合操作的命令
+
+ db.表名.renameCollection("表新名"); ///改表名字
+ db.表名.update({},{$rename:{"aa":"AA"}},false,true); ///改字段名字
+
+MongoDB 用户授权  
+./mongod --authshow
+启动后,进入mongo:
+./mongo
+>use admin; 进入超级管理员数据库
+>db.addUser("root用户名", "123密码"); 新建一个用户,管理员
+-u
+./mongo -uroot -p123 localhost:27017/admin
+>use test;
+>db.auth("root", "123"); 验证失败
+>use admin;db
+>db.auth("root", "123"); 验证成功
+在数据库admin中的帐号属于超级管理员帐号,在admin数据库中验证后可以访问所有数据库
+
+>use test;
+>db.addUser("user1", "123"); 在test中添加一个数据库管理员,只可以管理test数据
+
+
+
+
+
+
