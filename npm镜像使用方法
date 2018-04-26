@@ -1,0 +1,85 @@
+npm镜像使用方法
+
+npm镜像，就是npm的只读副本。
+
+使用方法有3种，推荐第一种或者第三种
+
+1:编辑 ~/.npmrc 加入下面内容
+
+registry = http://registry.cnpmjs.org
+永久生效。
+
+2:config命令
+
+npm config set registry http://registry.cnpmjs.org 
+npm info underscore （如果上面配置正确这个命令会有字符串response）
+永久生效。
+
+3:命令行指定
+
+npm --registry http://registry.cnpmjs.org info underscore 
+本次有效。
+
+
+-----------------------------------------------------------------------------------------------------
+
+国内镜像资源
+
+http://r.cnpmjs.org/
+http://registry.cnpmjs.org/
+http://registry.npm.taobao.org
+
+搜索镜像:
+
+http://cnpmjs.org
+http://npm.taobao.org/
+建立或使用镜像,参考: https://github.com/fenmgk2/cnpmjs.org
+
+国外的镜像资源:
+
+Registry: http://registry.npmjs.org 
+Website: npmjs.org 
+Region: Global 
+Data Center: Joyent, Fastly 
+Maintainer: npm Inc. 
+Established: 2010 
+European npm Mirror
+
+Registry: http://registry.npmjs.eu 
+Website: npmjs.eu 
+Region: Europe, Germany 
+Data Center: Hetzner 
+Maintainer: Maciej Małecki 
+Established: November, 2013 
+Australian npm Mirror
+
+Registry: http://registry.npmjs.org.au 
+Website: npm.nodejs.org.au 
+Region: Australia 
+Data Center: AWS 
+Maintainer: Rod Vagg 
+Established: July, 2013 
+Nodejitsu US npm Mirror
+
+Registry: https://registry.nodejitsu.com 
+Website: nodejitsu.com 
+Region: US East 
+Data Center: Joyent 
+Maintainer: Nodejitsu 
+Established: January, 2014 
+StrongLoop US npm Mirror
+
+Registry: https://npm.strongloop.com 
+Website: strongloop.com 
+Region: US West 
+Data Center: Rackspace 
+Maintainer: StrongLoop 
+Established: February, 2014
+
+中国镜像站:	http://registry.cnpmjs.org 
+官方站: http://registry.npmjs.org 
+各国镜像: 
+https://registry.nodejitsu.com  美国 
+https://npm.strongloop.com	美国 
+http://registry.npmjs.org.au	澳大利亚 
+http://registry.npmjs.eu	德国 
