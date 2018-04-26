@@ -1,0 +1,97 @@
+server {
+    listen       80;
+    server_name  yapi.okaiweb.local;
+
+    #charset koi8-r;
+
+    #access_log  logs/host.access.log  main;
+
+    location / {
+	proxy_http_version 1.1;
+	proxy_set_header Upgrade $http_upgrade;
+	proxy_set_header Connection "upgrade";
+        proxy_buffering off; #禁用缓存
+        proxy_pass   http://localhost:5000; #设置反向代理的地址
+    }
+
+
+}
+
+
+192.168.8.50 kuaixiuserver@2016
+root root0571! 
+
+
+大陆
+测试：120.25.206.202:12345
+正式：192.168.8.55 、Ubuntu： Aa123456
+
+-------------------------
+
+teamviewer 47.89.45.101 
+
+ 账号：181871931 密码：484dqa
+
+	   47.90.40.214 
+
+	账号：425462899 密码：5730
+
+香港服务器
+
+测试服务器：
+47.89.45.101(公) 
+10.28.180.230(内) 
+远程连接密码： 122649 
+用户名：administrator 
+密码：Srvok654321
+Teamviewer连接：账号：181871931 密码：78qh1b
+181871989   766asx
+
+实例： 2 核 4GB系列 II通用型 n1 
+I/O 优化实例： I/O 优化实例 
+系统盘： /dev/xvda高效云盘40GB 
+带宽： 10Mbps按使用流量 
+CPU： 2核 
+可用区： 随机分配 
+操作系统： Windows Server 2012 R2 数据中心版 64位中文版 
+内存： 4GB 
+地域： 香港 
+网络类型： 经典网络 
+云盾： 是
+
+网页服务器：
+47.90.40.214(公) 
+10.27.46.224(内) 
+远程连接密码： 628644 
+用户名：administrator 
+密码：(OK)123456654321
+
+实例： 2 核 8GB系列 II通用型 n2 
+I/O 优化实例： I/O 优化实例 
+系统盘： /dev/xvda高效云盘40GB 
+带宽： 10Mbps按使用流量 
+CPU： 2核 
+可用区： 随机分配 
+操作系统： Windows Server 2012 R2 数据中心版 64位中文版 
+内存： 8GB 
+地域： 香港 
+网络类型： 经典网络 
+云盾： 是
+
+数据服务器：
+10.28.179.96(内) 
+远程连接密码： 145267 
+用户名：root 
+密码：(OK)123456654321
+
+实例： 2 核 16GB系列 II内存型 e3 
+I/O 优化实例： I/O 优化实例 
+系统盘： /dev/xvda高效云盘40GB 
+带宽： 0Mbps按固定带宽 
+CPU： 2核 
+可用区： 随机分配 
+操作系统： Ubuntu 16.04 64位 
+内存： 16GB 
+地域： 香港 
+网络类型： 经典网络 
+云盾： 是
