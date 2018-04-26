@@ -1,0 +1,7 @@
+win10系统默认占用了80端口，跟nginx的默认端口冲突
+
+有两种解决方法
+
+1.找到conf/nginx.conf这个文件，把nginx默认端口改成其他端口
+2.打开注册表：regedit，找到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\HTTP，
+在右边找到Start这一项，将其改为0（默认3），重启就可以了
