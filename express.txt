@@ -1,0 +1,57 @@
+C:\Users\ThinkPad\AppData\Roaming\npm\node_modules
+
+express app
+cd app && npm install
+DEBUG=app:* & npm start
+
+npm install -g express
+npm install -g express-generator   ******** generator部署工具 **********
+
+///////////////////////////////////////////
+npm install -g koa
+npm install -g koa-generator
+///////////////////////////////////////////
+
+ script
+  | var list=!{sglist}
+
+/index?id=12
+req.query.id
+
+/index，然后post了一个id=2的值
+req.body.id
+
+--------------------------
+req.params.id;
+"/user/:id"
+/user/12
+
+"/users/:id?"
+/users/5
+/users
+
+"/files/*"
+/files/jquery.js
+/files/javascripts/jquery.js
+
+"/file/*.*"
+/files/jquery.js
+/files/javascripts/jquery.js
+
+"/user/:id/:operation?"
+/user/1
+/user/1/edit
+
+"/products.:format"
+/products.json
+/products.xml
+
+"/products.:format?"
+/products.json
+/products.xml
+/products
+
+
+"/user/:id.:format?"
+/user/12
+/user/12.json
