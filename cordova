@@ -1,0 +1,6 @@
+cordova create hello com.example.hello HelloWorld
+cordova platform add android
+cordova build
+cordova run android
+cordova emulate android
+cordova plugin add org.apache.cordova.file
