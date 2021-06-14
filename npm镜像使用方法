@@ -1,5 +1,8 @@
 npm镜像使用方法
 
+npm install cnpm -g
+npm install cnpm -g --registry=https://registry.nlark.com
+
 npm镜像，就是npm的只读副本。
 
 使用方法有3种，推荐第一种或者第三种
