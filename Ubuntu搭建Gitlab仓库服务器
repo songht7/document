@@ -1,0 +1,78 @@
+前期准备#
+sudo apt-get update
+sudo apt-get install -y curl openssh-server ca-certificates
+sudo apt-get install -y postfix
+使用左右键和回车键选择确定、取消，弹出列表选项的时候，选择 Internet Site
+
+接着信任 GitLab 的 GPG 公钥:
+
+curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
+配置镜像路径
+
+由于国外的下载速度过慢，所以配置清华大学镜像的路径。
+
+vi /etc/apt/sources.list.d/gitlab-ce.list
+写入 deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu xenial main
+根据你的版本，选择对于的内容写入/etc/apt/sources.list.d/gitlab-ce.list，详见https://mirror.tuna.tsinghua.edu.cn/help/gitlab-ce/
+
+安装 gitlab-ce#
+sudo apt-get update
+sudo apt-get install gitlab-ce
+
+执行配置#
+sudo gitlab-ctl reconfigure
+启动gitlab#
+sudo gitlab-ctl start
+
+浏览器进行访问#
+http://电脑的IP地址
+第一次进入，需要输入管理员账号的密码，以方便后期的管理。
+输入好之后，就可以以管理员进行登录，账号是root，密码就是你刚才输入的密码。
+至此，gitlab已安装成功，之后的使用方式，和github没有太大差异，就不进行介绍了。 
+
+
+扩展#
+修改gitlab的端口和地址#
+编辑gitlab.rb
+
+sudo gedit /etc/gitlab/gitlab.rb 
+将如下数据进行更改
+
+external_url 'http://gitlab.example.com'  
+比如说更改为
+
+external_url 'http://192.168.39.100:7800'  
+其中，192.168.39.100是安装了gitlab的这台电脑的IP，端口只要不冲突就行
+
+更改之后，需要执行如下代码
+
+sudo gitlab-ctl reconfigure
+最后，在浏览器中访问gitlab，发现已修改成功，需要使用192.168.39.100:7800来访问
+
+其他#
+gtilab部分命令#
+停止
+sudo gitlab-ctl stop
+
+开启
+sudo gitlab-ctl start
+
+确认配置（修改配置后，必须执行）
+sudo gitlab-ctl reconfigure
+
+查看日志
+sudo gitlab-ctl tail 
+
+查看 GitLab 版本号
+cat /opt/gitlab/embedded/service/gitlab-rails/VERSION  
+
+卸载gitlab#
+执行如下四步：
+sudo gitlab-ctl uninstall
+sudo dpkg -r gitlab-ce
+sudo rpm -e gitlab-ce
+reboot（重启） 
+
+本地代码库路径#
+/var/opt/gitlab/git-data
+
