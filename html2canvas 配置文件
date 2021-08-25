@@ -1,0 +1,21 @@
+名称	默认	描述
+allowTaint	false	是否允许跨域图像污染画布
+backgroundColor	#ffffff	画布背景色（如果未在DOM中指定）。设置null为透明
+canvas	null	现有canvas元素用作绘图的基础
+foreignObjectRendering	false	如果浏览器支持，是否使用ForeignObject渲染
+imageTimeout	15000	加载图像的超时时间（以毫秒为单位）。设置0为禁用超时。
+ignoreElements	(element) => false	谓词功能，可从渲染中删除匹配的元素。
+logging	true	启用日志以进行调试
+onclone	null	克隆文档以进行渲染时调用的回调函数可用于修改将要渲染的内容，而不会影响原始源文档。
+proxy	null	代理将用于加载跨域图像的网址。如果保留为空，则不会加载跨域图像。
+removeContainer	true	是否清除html2canvas临时创建的克隆DOM元素
+scale	window.devicePixelRatio	用于渲染的比例。默认为浏览器设备像素比率。
+useCORS	false	是否尝试使用CORS从服务器加载图像
+width	Element 宽度	的宽度 canvas
+height	Element 高度	的高度 canvas
+X	Element X偏移	裁剪画布X坐标
+ÿ	Element y偏移	裁剪画布y坐标
+scrollX	Element 滚动X	渲染元素时要使用的x滚动位置（例如，如果Element使用position: fixed）
+scrollY	Element 滚动Y	呈现元素时要使用的y-scroll位置（例如，如果Element使用position: fixed）
+windowWidth	Window.innerWidth	渲染时使用的窗口宽度Element，这可能会影响媒体查询之类的内容
+windowHeight	Window.innerHeight	渲染时要使用的窗口高度Element，这可能会影响媒体查询之类的内容
