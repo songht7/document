@@ -1,3 +1,19 @@
+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
+
+git remote set-url origin https://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@github.com/songht7/zhizhen.web.git
+
+git token
+Settings->Developer settings->Personal access tokens->Generate new token->给token起一个描述名字->过期时间、repo->Generate token->复制token
+
+// <your_token>：包括<>在内的全部字符替换成你的token
+// <USERNAME>：包括<>在内的全部字符替换成你的username
+// <REPO>：包括<>在内的全部字符替换成你要访问的仓库名称
+git remote set-url origin  https://<your_token>@github.com/<USERNAME>/<REPO>.git
+git push origin main
+
+
+
+
 检查本机是否有ssh key设置
 $ cd ~/.ssh 或cd .ssh
 
