@@ -1,7 +1,7 @@
 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 zhizhen
 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 aglbb
 
-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 22621
+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 22621
 
 git remote set-url origin https://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@github.com/songht7/zhizhen.web.git
 
